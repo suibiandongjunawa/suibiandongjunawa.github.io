@@ -1,0 +1,152 @@
+/* styles.css */  
+  
+/* 基本样式重置 */  
+* {  
+    margin: 0;  
+    padding: 0;  
+    box-sizing: border-box;  
+}  
+  
+/* 页面主体样式 */  
+body {  
+    font-family: Arial, sans-serif;  
+    line-height: 1.6;  
+    color: #333;  
+    background-color: #f4f4f4;  
+    margin: 0;  
+    padding: 20px;  
+}  
+  
+/* 头部样式 */  
+header {  
+    background-color: #3498db;  
+    color: white;  
+    padding: 10px 0;  
+    text-align: center;  
+}  
+  
+header h1 {  
+    margin-bottom: 10px;  
+}  
+  
+/* 导航样式 */  
+nav ul {  
+    list-style: none;  
+    padding: 0;  
+    display: flex;  
+    justify-content: center;  
+}  
+  
+nav ul li {  
+    margin: 0 15px;  
+}  
+  
+nav ul li a {  
+    color: white;  
+    text-decoration: none;  
+    padding: 8px 16px;  
+    transition: background-color 0.3s;  
+}  
+  
+nav ul li a:hover,  
+nav ul li a.current {  
+    background-color: #2980b9;  
+    border-radius: 4px;  
+}  
+  
+/* 主要内容区域样式 */  
+main {  
+    background-color: white;  
+    padding: 20px;  
+    margin-top: 20px;  
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
+}  
+  
+/* 段落和标题样式 */  
+section h2, section h3 {  
+    color: #3498db;  
+    margin-bottom: 15px;  
+}  
+  
+section p {  
+    margin-bottom: 20px;  
+}  
+  
+/* 联系方式列表样式 */  
+section ul {  
+    list-style: none;  
+    padding: 0;  
+}  
+  
+section ul li {  
+    background: url('icon-bullet.png') no-repeat left center; /* 可以使用自定义图标 */  
+    padding-left: 25px;  
+    margin-bottom: 10px;  
+}  
+  
+/* 表单样式 */  
+form {  
+    display: flex;  
+    flex-direction: column;  
+}  
+  
+form label {  
+    margin-bottom: 5px;  
+    font-weight: bold;  
+}  
+  
+form input[type="text"],  
+form input[type="email"],  
+form textarea {  
+    padding: 10px;  
+    margin-bottom: 15px;  
+    border: 1px solid #ccc;  
+    border-radius: 4px;  
+    width: 100%;  
+    max-width: 400px; /* 可选：限制表单元素的最大宽度 */  
+}  
+  
+form textarea {  
+    resize: vertical; /* 允许用户垂直调整文本区域大小 */  
+}  
+  
+form input[type="submit"] {  
+    background-color: #3498db;  
+    color: white;  
+    padding: 10px 20px;  
+    border: none;  
+    border-radius: 4px;  
+    cursor: pointer;  
+    transition: background-color 0.3s;  
+}  
+  
+form input[type="submit"]:hover {  
+    background-color: #2980b9;  
+}  
+  
+/* 页脚样式 */  
+footer {  
+    background-color: #3498db;  
+    color: white;  
+    text-align: center;  
+    padding: 10px 0;  
+    margin-top: 20px;  
+}  
+  
+/* 响应式设计 */  
+@media (max-width: 600px) {  
+    nav ul {  
+        flex-direction: column;  
+        align-items: center;  
+    }  
+  
+    nav ul li {  
+        margin: 10px 0;  
+    }  
+  
+    form input[type="text"],  
+    form input[type="email"],  
+    form textarea {  
+        max-width: 100%; /* 在小屏幕上占满可用宽度 */  
+    }  
+}
