@@ -1,0 +1,63 @@
+/* style.css */
+
+/*  ... 其他样式 ...  */
+
+
+/* News Section */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 1em;
+}
+
+.news-item {
+    border: 1px solid #ddd;
+    padding: 1.5em;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative; /*  用于定位按钮  */
+    transition: transform 0.3s ease; /*  添加 hover 动画  */
+}
+
+.news-item:hover {
+    transform: translateY(-5px); /*  鼠标悬停时向上移动  */
+}
+
+.news-item button {
+    position: absolute;
+    bottom: 1em;  /*  距离底部 1em  */
+    right: 1em; /*  距离右侧 1em  */
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.news-item button:hover {
+    background-color: #2980b9;
+}
+
+.news-date {
+    font-size: 0.8em;
+    color: #777;
+    margin-top: 1em;  /*  日期与内容间距  */
+
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 1em 0;
+    margin-top: 2em;  /* 与 main 内容间距 */
+
+}
+
+.footer-content {  /*  用于页脚内容居中  */
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: center;
+}
