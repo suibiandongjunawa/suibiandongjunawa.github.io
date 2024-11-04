@@ -1,35 +1,62 @@
+<!-- news-detail.html -->
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>新闻详情 - 月落花</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    </header>
-    </nav>
 
+<body>
+    <header>
+    </header>
+    <nav>
+    </nav>
     <main>
         <article id="news-detail">
-            <h2></h2>
-            <p class="news-date"></p>
-            <div class="news-content"></div>
+
+            <h2>新文章发布</h2> <form id="news-form">
+                <label for="title">标题:</label>
+                <input type="text" id="title" name="title" required>
+
+                <label for="date">日期:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="content">内容:</label>
+                <textarea id="content" name="content" rows="10" required></textarea>
+
+                <button type="submit">发布文章</button>
+            </form>
+
         </article>
+
     </main>
+
+    <footer>
+
     </footer>
 
     <script>
-        //  获取 URL 参数
-        const urlParams = new URLSearchParams(window.location.search);
-        const newsTitle = decodeURIComponent(urlParams.get('title'));
+        const newsForm = document.getElementById('news-form');
+        newsForm.addEventListener('submit', (event) => {
+            event.preventDefault(); // 阻止表单默认提交
 
-        //  根据新闻标题获取新闻数据 (实际应用中，这部分数据应从服务器获取)
-        const news = newsData.find(item => item.title === newsTitle);
+            const title = document.getElementById('title').value;
+            const date = document.getElementById('date').value;
+            const content = document.getElementById('content').value;
 
-        //  将新闻数据渲染到页面上
-        document.querySelector('#news-detail h2').textContent = news.title;
-        document.querySelector('#news-detail .news-date').textContent = news.date;
-        document.querySelector('#news-detail .news-content').textContent = news.content;
+            // 将新闻数据存储到本地存储
+            const newsData = JSON.parse(localStorage.getItem('newsData') || '[]');
+            newsData.push({ title, date, content });
+            localStorage.setItem('newsData', JSON.stringify(newsData));
+
+            alert('文章发布成功！');
+            newsForm.reset(); // 清空表单
+        });
     </script>
 
 </body>
+
 </html>
