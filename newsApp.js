@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const newsListElement = document.getElementById('news-list');
     const editNewsModal = document.getElementById('edit-news-modal');
     let currentEditNews = null; // 当前正在编辑的新闻
-
+ 
     // 模拟从服务器加载新闻
     function loadNews() {
         // 这里只是示例数据，实际应用中应该从服务器获取
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         newsList.push({ title: '新闻标题2', date: '2023-10-02', content: '新闻内容2' });
         renderNewsList();
     }
-
+ 
     // 渲染新闻列表
     function renderNewsList() {
         newsListElement.innerHTML = '';
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
             newsListElement.appendChild(li);
         });
     }
-
+ 
     // 编辑新闻
     function editNews(news) {
         currentEditNews = news;
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('edit-content').value = news.content;
         editNewsModal.style.display = 'block';
     }
-
+ 
     // 更新新闻（提交编辑表单）
     document.getElementById('edit-news-form').addEventListener('submit', (e) => {
         e.preventDefault();
@@ -52,35 +52,44 @@ document.addEventListener('DOMContentLoaded', () => {
         editNewsModal.style.display = 'none';
         renderNewsList(); // 重新渲染新闻列表以显示更新
     });
-
-    // 关闭编辑模态框
+ 
+    // 关闭编辑模态框（包括通过点击关闭按钮和背景）
     const closeModalButtons = document.getElementsByClassName('close');
+    const modalBackground = document.getElementById('edit-news-modal-background'); // 假设有一个背景元素用于关闭模态框
     for (let i = 0; i < closeModalButtons.length; i++) {
         closeModalButtons[i].onclick = () => {
             editNewsModal.style.display = 'none';
         }
     }
-
+    modalBackground.onclick = (e) => {
+        // 确保点击事件不在关闭按钮或模态框内容区域上
+        if (e.target === modalBackground) {
+            editNewsModal.style.display = 'none';
+        }
+    }
+ 
     // 删除新闻
     function deleteNews(index) {
         newsList.splice(index, 1);
         renderNewsList();
     }
-
-    // 显示添加新文章的表单（这里已经直接在HTML中显示了，所以不需要额外代码）
-
-    // 提交新文章表单（需要添加）
+ 
+    // 提交新文章表单
     document.getElementById('news-form').addEventListener('submit', (e) => {
         e.preventDefault();
-        const title = document.getElementById('title').value;
-        const date = document.getElementById('date').value;
-        const content = document.getElementById('content').value;
-        newsList.push({ title, date, content });
-        renderNewsList(); // 添加后重新渲染新闻列表
-        // 清空表单
-        document.getElementById('news-form').reset();
+        const title = document.getElementById('title').value.trim(); // 添加trim去除空白
+        const date = document.getElementById('date').value.trim();
+        const content = document.getElementById('content').value.trim();
+        if (title && date && content) { // 检查输入是否有效
+            newsList.push({ title, date, content });
+            renderNewsList(); // 添加后重新渲染新闻列表
+            // 清空表单
+            document.getElementById('news-form').reset();
+        } else {
+            alert('请填写所有字段。');
+        }
     });
-
+ 
     // 加载新闻数据
     loadNews();
 });
