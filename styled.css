@@ -1,171 +1,152 @@
-/* 基本样式重置 */
+/* styled.css */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-/* 页面背景 */
+/* 主体样式 */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4; /* 调整为更中性的灰色背景，或根据需要选择 */
+    background-color: #f4f4f9;
     color: #333;
     line-height: 1.6;
-    font-size: 16px;
     padding: 20px;
 }
 
-/* 容器样式 */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff; /* 白色背景，确保内容清晰 */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 轻微阴影，提升层次感 */
-    border-radius: 8px; /* 圆角边框，使外观更柔和 */
-}
-
-/* 标题样式 */
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Georgia', serif; /* 使用衬线字体，提升标题质感 */
-    color: #2c3e50; /* 深蓝色，自然且舒适 */
-    margin-bottom: 20px;
-}
-
-/* 段落样式 */
-p {
-    margin-bottom: 20px;
-}
-
-/* 链接样式 */
-a {
-    color: #16a085; /* 绿色，代表自然与生机 */
-    text-decoration: none;
-    transition: color 0.3s ease; /* 平滑的过渡效果 */
-}
-
-a:hover {
-    color: #2ecc71; /* 加深绿色，提升交互体验 */
-}
-
-/* 按钮样式 */
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #2c3e50; /* 深蓝色背景 */
-    color: #ecf0f1; /* 浅灰色文字，对比度高 */
-    border: none;
-    border-radius: 5px; /* 圆角边框 */
-    cursor: pointer;
-    transition: background-color 0.3s ease; /* 平滑的过渡效果 */
-}
-
-.button:hover {
-    background-color: #34495e; /* 加深蓝色背景 */
-}
-
-/* 列表样式 */
-ul, ol {
-    margin-bottom: 20px;
-    padding-left: 20px;
-}
-
-ul li, ol li {
-    margin-bottom: 10px;
-    list-style-type: disc; /* 圆形项目符号，简约自然；对于 ol，这将在下面的 ol li 规则中被覆盖 */
-}
-
-ol li {
-    list-style-type: decimal; /* 数字列表 */
-}
-
-/* 图片样式 */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    border-radius: 8px; /* 圆角边框 */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 轻微阴影 */
-}
-
-/* 表格样式 */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-}
-
-table, th, td {
-    border: 1px solid #bdc3c7; /* 浅灰色边框 */
-}
-
-th, td {
-    padding: 12px;
-    text-align: left;
-}
-
-th {
-    background-color: #ecf0f1; /* 浅灰色背景 */
-}
-
-/* 头部和导航样式 */
+/* 头部样式 */
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 1em 0;
+    background: #4CAF50;
+    color: white;
+    padding: 10px 0;
     text-align: center;
 }
 
+/* 导航栏样式 */
 nav {
-    background-color: #444;
-    color: #fff;
-    padding: 0.5em 0;
+    margin: 20px 0;
     text-align: center;
 }
 
-/* 新闻部分样式 */
-main {
-    padding: 1em;
-}
-
-#news-form-section, #news-list-section {
-    margin-bottom: 1em;
-}
-
-#news-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-#news-list li {
-    background-color: #fff;
-    margin: 0.5em 0;
-    padding: 1em;
+nav a {
+    color: #4CAF50;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 5px 10px;
+    border: 1px solid #4CAF50;
     border-radius: 5px;
+}
+
+nav a:hover {
+    background: #4CAF50;
+    color: white;
+}
+
+/* 主要内容区域样式 */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* 新闻表单和详情样式 */
+#news-form-section, #news-list-section {
+    background: white;
+    padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#news-list li h3 {
-    margin: 0 0 0.5em 0;
+/* 表单样式 */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-#news-list li p {
-    margin: 0.5em 0;
+label {
+    font-weight: bold;
 }
 
-#news-list li small {
-    color: #666;
-    font-size: 0.8em;
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-/* 响应式设计 */
-@media (max-width: 768px) {
-    .container {
-        padding: 15px;
-    }
+button {
+    background: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
 
-    h1, h2, h3, h4, h5, h6 {
-        font-size: 1.2em;
-    }
+button:hover {
+    background: #45a049;
+}
+
+/* 新闻列表样式 */
+#news-list {
+    list-style: none;
+}
+
+#news-list li {
+    background: white;
+    margin: 10px 0;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+/* 模态框样式 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: #000;
+}
+
+/* 页脚样式 */
+footer {
+    background: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
 }
