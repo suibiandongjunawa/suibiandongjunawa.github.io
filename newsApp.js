@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // 模拟从服务器加载新闻
     function loadNews() {
         // 这里只是示例数据，实际应用中应该从服务器获取
-        newsList.push({ title: '新闻标题1', date: '2023-10-01', content: '新闻内容1' });
-        newsList.push({ title: '新闻标题2', date: '2023-10-02', content: '新闻内容2' });
+        newsList.push({ title: 'MFCUTS官方', date: '2024-11-09', content: '就在今天，MFCUTS官网的新闻发布，成功展开！' });
+        newsList.push({ title: '月落花官方', date: '2024-11-09', content: '月落花及MFCUTS社区创始人——随便东君，在今天我们的官网，圆满成功，服务器因为fpr的原因停服1周，抱歉！' });
         renderNewsList();
     }
  
